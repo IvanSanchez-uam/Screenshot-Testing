@@ -65,7 +65,8 @@ internal sealed class ShowkaseMetadata {
         val showkaseStyleName: String? = null,
         val isDefaultStyle: Boolean = false,
         val tags: List<String> = emptyList(),
-        val extraMetadata: List<String> = emptyList()
+        val extraMetadata: List<String> = emptyList(),
+        val showkaseGenerateScreenshot: Boolean = false
     ) : ShowkaseMetadata()
 
     data class Color(
@@ -137,8 +138,8 @@ internal fun XAnnotationBox<ShowkaseCodegenMetadata>.toModel(element: XElement):
                 previewParameterName = props.previewParameterName,
                 isDefaultStyle = props.isDefaultStyle,
                 tags = props.tags.toList(),
-                extraMetadata = props.tags.toList()
-
+                extraMetadata = props.tags.toList(),
+                showkaseGenerateScreenshot = props.showkaseGenerateScreenshot
             )
         }
         ShowkaseMetadataType.COLOR -> {
@@ -226,7 +227,8 @@ internal fun getShowkaseMetadata(
             isDefaultStyle = isDefaultStyle,
             componentIndex = showkaseAnnotations.indexOf(annotation),
             tags = tags,
-            extraMetadata = extraMetadata
+            extraMetadata = extraMetadata,
+            showkaseGenerateScreenshot = annotation.value.generateScreenshot
         )
     }
 }
