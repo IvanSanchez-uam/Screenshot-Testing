@@ -109,7 +109,7 @@ buildscript {
 plugins {
     id "io.gitlab.arturbosch.detekt" version "1.7.4"
     id "com.google.devtools.ksp" version "$KSP_VERSION"
-    id "com.vanniktech.maven.publish" version "$MAVEN_PUBLISH_VERSION"
+    //id "com.vanniktech.maven.publish" version "$MAVEN_PUBLISH_VERSION"
 }
 
 allprojects {

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id "maven-publish"
 }
 apply from: "$rootDir/publishing.gradle"
 
@@ -17,6 +18,10 @@ android {
 
     buildTypes {
         debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -65,4 +70,17 @@ dependencies {
     implementation deps.compose.tooling
     implementation deps.compose.layout
     implementation deps.compose.material
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = "com.expediagroup.screenshot-test"
+                artifactId = "showkase"
+                version = "1.0.0-beta18"
+            }
+        }
+    }
 }
