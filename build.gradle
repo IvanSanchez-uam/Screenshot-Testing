@@ -88,7 +88,7 @@ buildscript {
             'xprocessing'            : "androidx.room:room-compiler-processing:${versions.xprocessing}",
             'xprocessingTesting'     : "androidx.room:room-compiler-processing-testing:${versions.xprocessing}",
     ]
-    ext.MAVEN_PUBLISH_VERSION = versions.mavenPublish
+    //ext.MAVEN_PUBLISH_VERSION = versions.mavenPublish
     repositories {
         google()
         mavenCentral()
@@ -99,7 +99,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:${versions.gradle}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "com.karumi:shot:${versions.shot}"
-        classpath "com.vanniktech:gradle-maven-publish-plugin:${versions.mavenPublish}"
+        //classpath "com.vanniktech:gradle-maven-publish-plugin:${versions.mavenPublish}"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
