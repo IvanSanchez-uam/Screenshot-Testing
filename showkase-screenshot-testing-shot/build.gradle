@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'shot'
 }
-apply from: "$rootDir/publishing.gradle"
+//apply from: "$rootDir/publishing.gradle"
 
 android {
     compileSdkVersion 32

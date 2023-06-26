@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'kotlin'
 }
-apply from: "$rootDir/publishing.gradle"
+//apply from: "$rootDir/publishing.gradle"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
